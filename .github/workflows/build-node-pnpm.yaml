@@ -12,11 +12,6 @@ on:
     - cron: "0 3 * * 1"
 
   workflow_dispatch:
-    inputs:
-      tag:
-        description: 'Image tag override'
-        required: false
-        default: 'latest'
 
 jobs:
   build-and-push:
@@ -44,4 +39,4 @@ jobs:
           context: ./images/node-pnpm
           file: ./images/node-pnpm/Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}:latest
+          tags: ghcr.io/${{ github.repository }}/node-pnpm:latest
