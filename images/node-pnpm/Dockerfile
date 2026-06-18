@@ -17,5 +17,3 @@ RUN mkdir -p ${PNPM_HOME} \
 USER node
 
 RUN pnpm config set store-dir ${PNPM_HOME}
-
-WORKDIR /workspace
