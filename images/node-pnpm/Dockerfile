@@ -8,7 +8,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 RUN corepack enable \
-    && corepack prepare pnpm@$latest --activate
+    && corepack prepare pnpm@latest --activate
 
 ENV PNPM_HOME=/home/node/.pnpm-store
 RUN mkdir -p ${PNPM_HOME} \
