@@ -1,4 +1,4 @@
-name: Build node-pnpm devcontainer image
+name: Build devcontainer image node-pnpm
 
 on:
   push:
