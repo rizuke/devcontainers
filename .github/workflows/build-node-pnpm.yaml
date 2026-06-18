@@ -11,6 +11,13 @@ on:
   schedule:
     - cron: "0 3 * * 1"
 
+  workflow_dispatch:
+    inputs:
+    tag:
+      description: 'Image tag override'
+      required: false
+      default: 'latest'
+
 jobs:
   build-and-push:
     name: Build and push
