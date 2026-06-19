@@ -15,7 +15,7 @@ on:
 
 jobs:
   build-and-push:
-    uses: rizuke/.github/workflows/build-docker-image.yaml@main
+    uses: rizuke/.github/.github/workflows/build-docker-image.yaml@main
     with:
       image-name: node-pnpm
       context: ./images/node-pnpm
