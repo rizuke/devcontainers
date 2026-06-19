@@ -22,3 +22,6 @@ jobs:
       dockerfile: ./images/node-pnpm/Dockerfile
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
+    permissions:
+      contents: read
+      packages: write
