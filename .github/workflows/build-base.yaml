@@ -1,0 +1,27 @@
+name: Build devcontainer image base
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - images/base/**
+      - .github/workflows/build-base.yaml
+
+  schedule:
+    - cron: "0 3 * * 1"
+
+  workflow_dispatch:
+
+jobs:
+  build-and-push:
+    uses: rizuke/.github/.github/workflows/build-docker-image.yaml@main
+    with:
+      image-name: base
+      context: ./images/base
+      dockerfile: ./images/base/Dockerfile
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
+    permissions:
+      contents: read
+      packages: write
