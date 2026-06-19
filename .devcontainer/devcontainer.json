@@ -1,6 +1,6 @@
 {
   "name": "Devcontainers",
-  "image": "mcr.microsoft.com/devcontainers/base:alpine",
+  "image": "ghcr.io/rizuke/devcontainers/base:latest",
   "remoteUser": "vscode",
   "customizations": {
     "vscode": {
