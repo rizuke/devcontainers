@@ -7,4 +7,8 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-USER vscode
+ARG USERNAME=vscode
+
+RUN useradd -m -s /bin/bash $USERNAME
+
+USER $USERNAME
