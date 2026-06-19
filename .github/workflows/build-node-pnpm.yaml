@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - images/node-pnpm/**
-      - .github/workflows/build-node-pnpm.yml
+      - .github/workflows/build-node-pnpm.yaml
 
   schedule:
     - cron: "0 3 * * 1"
