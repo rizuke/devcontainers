@@ -1,14 +1,12 @@
-FROM debian:bookworm-slim
+FROM alpine:latest
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-        git \
-        ca-certificates \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache \
+    git \
+    ca-certificates \
+    bash
 
 ARG USERNAME=vscode
 
-RUN useradd -m -s /bin/bash $USERNAME
+RUN adduser -D -s /bin/bash $USERNAME
 
 USER $USERNAME
