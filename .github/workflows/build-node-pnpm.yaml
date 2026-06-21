@@ -20,6 +20,7 @@ jobs:
       image-name: node-pnpm
       context: ./images/node-pnpm
       dockerfile: ./images/node-pnpm/Dockerfile
+      multi-arch: true
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
     permissions:
