@@ -1,4 +1,4 @@
-name: Build devcontainer image base
+name: build/base
 
 on:
   push:
@@ -24,5 +24,4 @@ jobs:
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
     permissions:
-      contents: read
       packages: write
