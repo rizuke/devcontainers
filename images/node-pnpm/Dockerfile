@@ -12,11 +12,8 @@ RUN corepack enable \
 
 ENV PNPM_HOME=/home/node/.pnpm-store
 RUN mkdir -p ${PNPM_HOME} \
-    && mkdir -p /home/node/.pi/agent \
-    && chown -R node:node /home/node
+    && chown node:node ${PNPM_HOME}
 
 USER node
 
 RUN pnpm config set store-dir ${PNPM_HOME}
-
-RUN pnpm add -g --ignore-scripts @earendil-works/pi-coding-agent
