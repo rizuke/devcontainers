@@ -14,8 +14,8 @@ ENV PNPM_HOME=/home/node/.pnpm-store
 RUN mkdir -p ${PNPM_HOME} \
     && chown node:node ${PNPM_HOME}
 
-RUN pnpm add -g --ignore-scripts @earendil-works/pi-coding-agent
-
 USER node
 
 RUN pnpm config set store-dir ${PNPM_HOME}
+
+RUN pnpm add -g --ignore-scripts @earendil-works/pi-coding-agent
