@@ -12,7 +12,8 @@ RUN corepack enable \
 
 ENV PNPM_HOME=/home/node/.pnpm-store
 RUN mkdir -p ${PNPM_HOME} \
-    && chown node:node ${PNPM_HOME}
+    && mkdir -p /home/node/.pi/agent \
+    && chown -R node:node /home/node
 
 USER node
 
