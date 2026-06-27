@@ -18,6 +18,8 @@ ENV PATH=$PNPM_HOME/bin:$PATH
 
 # Install Pi Agent
 RUN pnpm add -g --ignore-scripts @earendil-works/pi-coding-agent
+RUN mkdir -p /home/node/.pi/agent \
+    && chown -R node:node /home/node/.pi
 
 ENV PNPM_STORE=/home/node/.pnpm-store
 RUN mkdir -p ${PNPM_STORE} \
