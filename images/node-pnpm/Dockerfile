@@ -27,7 +27,7 @@ RUN mkdir -p /home/node/.pi/agent \
 
 USER node
 
-USER $USERNAME
+# Install global extensions for Pi Agent
 RUN pi install npm:@juicesharp/rpiv-todo \
     && pi install npm:@juicesharp/rpiv-ask-user-question
 
