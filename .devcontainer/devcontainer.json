@@ -2,6 +2,9 @@
   "name": "Devcontainers",
   "image": "ghcr.io/rizuke/devcontainers/base:latest",
   "remoteUser": "vscode",
+  "mounts": [
+    "source=pi-agent,target=/home/vscode/.pi/agent,type=volume"
+  ],
   "customizations": {
     "vscode": {
       "extensions": [
