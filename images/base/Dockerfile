@@ -4,6 +4,7 @@ RUN apk add --no-cache \
     git \
     ca-certificates \
     bash \
+    curl \
     # Pi Agent
     nodejs \
     npm \

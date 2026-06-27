@@ -4,6 +4,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         git \
         ca-certificates \
+        curl \
         # Pi Agent
         ripgrep \
         fd-find \
