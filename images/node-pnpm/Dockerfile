@@ -16,15 +16,19 @@ RUN corepack enable \
 ENV PNPM_HOME=/usr/local/share/pnpm
 ENV PATH=$PNPM_HOME/bin:$PATH
 
+ENV PNPM_STORE=/home/node/.pnpm-store
+RUN mkdir -p ${PNPM_STORE} \
+    && chown node:node ${PNPM_STORE}
+
 # Install Pi Agent
 RUN pnpm add -g --ignore-scripts @earendil-works/pi-coding-agent
 RUN mkdir -p /home/node/.pi/agent \
     && chown -R node:node /home/node/.pi
 
-ENV PNPM_STORE=/home/node/.pnpm-store
-RUN mkdir -p ${PNPM_STORE} \
-    && chown node:node ${PNPM_STORE}
-
 USER node
+
+USER $USERNAME
+RUN pi install npm:@juicesharp/rpiv-todo \
+    && pi install npm:@juicesharp/rpiv-ask-user-question
 
 RUN pnpm config set store-dir ${PNPM_STORE}
