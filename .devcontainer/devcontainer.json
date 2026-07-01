@@ -2,6 +2,7 @@
   "name": "Devcontainers",
   "image": "ghcr.io/rizuke/devcontainers/base:latest",
   "remoteUser": "vscode",
+  "postCreateCommand": "curl -fsSL https://raw.githubusercontent.com/rizuke/agents/main/AGENTS.md -o ~/.pi/agent/AGENTS.md",
   "mounts": [
     "source=pi-agent,target=/home/vscode/.pi/agent,type=volume"
   ],
