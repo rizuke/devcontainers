@@ -24,4 +24,5 @@ USER $USERNAME
 
 # Install global extensions for Pi Agent
 RUN pi install npm:@juicesharp/rpiv-todo \
-    && pi install npm:@juicesharp/rpiv-ask-user-question
+    && pi install npm:@juicesharp/rpiv-ask-user-question \
+    && pi install npm:pi-web-access
