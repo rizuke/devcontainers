@@ -5,6 +5,7 @@ RUN apt-get update \
         git \
         ca-certificates \
         curl \
+        jq \
         # Pi Agent
         ripgrep \
         fd-find \
