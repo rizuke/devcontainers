@@ -6,6 +6,7 @@ RUN apk add --no-cache \
     bash \
     curl \
     jq \
+    xq \
     # Pi Agent
     nodejs \
     npm \
