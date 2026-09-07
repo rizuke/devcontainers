@@ -14,7 +14,7 @@ on:
       - completed
 
   schedule:
-    - cron: "0 3 * * 1"
+    - cron: "0 3 * * 6"
 
   workflow_dispatch:
 
