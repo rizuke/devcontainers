@@ -13,8 +13,7 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN corepack enable \
-    && corepack prepare pnpm@latest --activate
+RUN npm install -g pnpm
 
 ENV PNPM_HOME=/usr/local/share/pnpm
 ENV PATH=$PNPM_HOME/bin:$PATH
@@ -24,7 +23,7 @@ RUN mkdir -p ${PNPM_STORE} \
     && chown node:node ${PNPM_STORE}
 
 # Install Pi Agent
-RUN pnpm add -g --ignore-scripts @earendil-works/pi-coding-agent
+RUN npm install -g --ignore-scripts @earendil-works/pi-coding-agent
 RUN mkdir -p /home/node/.pi/agent \
     && chown -R node:node /home/node/.pi
 

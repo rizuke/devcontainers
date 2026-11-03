@@ -1,12 +1,12 @@
-name: build/node-pnpm
+name: build/node
 
 on:
   push:
     branches:
       - main
     paths:
-      - images/node-pnpm/**
-      - .github/workflows/build-node-pnpm.yaml
+      - images/node/**
+      - .github/workflows/build-node.yaml
 
   schedule:
     - cron: "0 3 * * 6"
@@ -17,9 +17,9 @@ jobs:
   build-and-push:
     uses: rizuke/.github/.github/workflows/build-docker-image.yaml@main
     with:
-      image-name: node-pnpm
-      context: ./images/node-pnpm
-      dockerfile: ./images/node-pnpm/Dockerfile
+      image-name: node
+      context: ./images/node
+      dockerfile: ./images/node/Dockerfile
       multi-arch: true
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
