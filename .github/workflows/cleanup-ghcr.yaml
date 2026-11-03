@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: dataaxiom/ghcr-cleanup-action@v1
         with:
-          packages: base,node
+          packages: devcontainers/base,devcontainers/node
           delete-untagged: true
           older-than: 30 days
           exclude-tags: latest
