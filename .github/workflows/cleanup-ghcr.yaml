@@ -1,0 +1,25 @@
+name: Cleanup GHCR Images
+
+on:
+  schedule:
+    - cron: "0 4 1,15 * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Log what would be deleted without making changes"
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    steps:
+      - uses: dataaxiom/ghcr-cleanup-action@v1
+        with:
+          packages: base,node
+          delete-untagged: true
+          older-than: 30 days
+          exclude-tags: latest
