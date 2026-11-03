@@ -7,6 +7,8 @@ RUN apk add --no-cache \
     curl \
     jq \
     xq \
+    python3 \
+    py3-pip \
     # Pi Agent
     nodejs \
     npm \
